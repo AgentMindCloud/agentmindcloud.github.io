@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grok Bot stuck? A fix guide from Cursor's live help</title>
+  <meta name="description" content="What to do today for Grok Bot sign-in, a computer stuck on still starting up, and usage limits that make routines skip. Quoted from Cursor's help pages on 2026-10-08.">
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --ink: #1c1915;
+      --muted: #5e584e;
+      --line: #d8d0c2;
+      --accent: #8c3226;
+      --paper: #fffdf8;
+      --support: #f7efe3;
+      --gap: #e7efe4;
+      --draft: #f3e4c4;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+      font-size: 1.0625rem;
+      line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    a:hover { text-decoration-thickness: 2px; }
+    .wrap { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1.15rem 4rem; }
+    header.site {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .kicker {
+      font-family: system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.4rem;
+    }
+    h1 { font-size: 2.15rem; line-height: 1.15; margin: 0 0 0.6rem; font-weight: 700; }
+    h2 { font-size: 1.55rem; line-height: 1.2; margin: 2.2rem 0 0.6rem; }
+    h3 { font-size: 1.15rem; margin: 1.5rem 0 0.4rem; }
+    p { margin: 0.7rem 0; }
+    .lede { font-size: 1.12rem; }
+    nav.toc ol { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+    nav.toc li { margin: 0.25rem 0; }
+    .checked {
+      font-family: system-ui, sans-serif;
+      font-size: 0.92rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 0.7rem 0.85rem;
+      margin: 1rem 0;
+    }
+    p.cta { margin: 1rem 0 0.2rem; }
+    ul, ol { padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    blockquote {
+      margin: 0.8rem 0;
+      padding: 0.75rem 0.9rem;
+      background: var(--paper);
+      border-left: 4px solid var(--accent);
+    }
+    blockquote p { margin: 0.35rem 0; }
+    blockquote footer {
+      margin-top: 0.55rem;
+      font-family: system-ui, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .callout {
+      border: 1px solid var(--line);
+      padding: 0.85rem 0.95rem;
+      margin: 1rem 0;
+    }
+    .callout.support { background: var(--support); }
+    .callout.gap { background: var(--gap); }
+    .callout strong.label {
+      font-family: system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin: 0.8rem 0 1rem;
+      background: var(--paper);
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      padding: 0.45rem 0.5rem;
+    }
+    th { font-family: system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+    .scroll { overflow-x: auto; }
+    .handles { font-family: system-ui, sans-serif; font-size: 0.92rem; }
+    .draft {
+      background: var(--draft);
+      border: 1px solid #c4a36a;
+      padding: 0.9rem 1rem;
+      margin: 1rem 0;
+    }
+    .draft pre {
+      white-space: pre-wrap;
+      font-family: Georgia, Palatino, serif;
+      font-size: 1rem;
+      margin: 0.4rem 0 0;
+    }
+    footer.page {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: system-ui, sans-serif;
+      font-size: 0.88rem;
+    }
+    code { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.92em; }
+    @media (max-width: 640px) {
+      h1 { font-size: 1.75rem; }
+      .wrap { padding: 1rem 0.9rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <p class="kicker">AgentMindCloud · public fix guide</p>
+      <h1>Grok Bot stuck?</h1>
+      <p class="lede">Three problems you can work through today from Cursor's own help: getting in, a computer that stays on "still starting up," and weekly usage that makes routines skip.</p>
+      <p class="checked"><strong>Last checked 2026-10-08.</strong> Every quoted sentence below was copied from the live page that day. Each quote links to that page. This guide does not add a button, a timer, or a meter the live pages do not describe.</p>
+      <p class="cta"><a href="https://x.com/jana_solos">Follow @jana_solos for Grok Bot fixes</a></p>
+      <nav class="toc" aria-label="On this page">
+        <ol>
+          <li><a href="#who">Who this helps</a></li>
+          <li><a href="#getting-in">1. Getting in</a></li>
+          <li><a href="#computer">2. Computer stuck on "still starting up"</a></li>
+          <li><a href="#usage">3. Usage limits and routines that skip</a></li>
+          <li><a href="#handover">Handover reply (draft)</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <section id="who">
+      <h2>Who this helps</h2>
+      <p>Each person or thread below maps to one section. Open that section and follow only the linked Cursor pages.</p>
+      <div class="scroll">
+        <table class="handles">
+          <thead>
+            <tr><th>Asker</th><th>Section</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="https://x.com/AubinFernex/status/2107203371828478447">@AubinFernex</a></td><td>1. Getting in</td></tr>
+            <tr><td><a href="https://x.com/labmosaic/status/2107299322702495745">@labmosaic</a></td><td>1. Getting in</td></tr>
+            <tr><td>@greyfedora0</td><td>1. Getting in</td></tr>
+            <tr><td>@adamlachman21</td><td>1. Getting in</td></tr>
+            <tr><td>@BluntRiser</td><td>1. Getting in</td></tr>
+            <tr><td>@aiSignalDrift</td><td>1. Getting in</td></tr>
+            <tr><td>@frknnsh</td><td>1. Getting in</td></tr>
+            <tr><td>@EnsignLynch</td><td>1. Getting in</td></tr>
+            <tr><td>@YossiOfficial</td><td>1. Getting in</td></tr>
+            <tr><td><a href="https://x.com/manny_senpai/status/2107514241221824745">@manny_senpai</a></td><td>1. Getting in</td></tr>
+            <tr><td><a href="https://x.com/lenraleigh/status/2107726651123446218">@lenraleigh</a></td><td>1. Getting in</td></tr>
+            <tr><td>@sophiamyang</td><td>1. Getting in</td></tr>
+            <tr><td>@johnpdifranco</td><td>1. Getting in</td></tr>
+            <tr><td><a href="https://forum.cursor.com/t/deleted-cursor-account-leaves-grok-link-orphaned-and-blocks-relinking/168783">Forum thread 168783</a> (deleted Cursor account, orphaned Grok link)</td><td>1. Getting in</td></tr>
+            <tr><td><a href="https://x.com/_kvnloo/status/2106994183038759335">@_kvnloo</a></td><td>2. Computer</td></tr>
+            <tr><td><a href="https://forum.cursor.com/t/grok-bot-agent-computer-stuck-starting-up-48-72h-update-reset-failed-on-all-devices-please-reprovision/172519">Forum thread 172519</a> (computer stuck starting up)</td><td>2. Computer</td></tr>
+            <tr><td><a href="https://x.com/lokgupt_a/status/2107799423069851863">@lokgupt_a</a></td><td>3. Usage and routines</td></tr>
+            <tr><td><a href="https://x.com/sunilmehta_si/status/2108066091968962970">@sunilmehta_si</a> (held)</td><td>3. Usage and routines</td></tr>
+            <tr><td><a href="https://x.com/B_doong2daddy/status/2108074624672051460">@B_doong2daddy</a></td><td>3. Usage and routines</td></tr>
+            <tr><td>@finallybye</td><td>3. Usage and routines</td></tr>
+            <tr><td>@NKerzman, forum thread 173936</td><td>3. Usage and routines</td></tr>
+            <tr><td>@thelmerfud</td><td>3. Usage and routines</td></tr>
+            <tr><td>@DrewVenzke</td><td>3. Usage and routines</td></tr>
+            <tr><td>@LongTermHoldr</td><td>3. Usage and routines</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The ledger also groups other closed usage-breakdown twins with @thelmerfud, @DrewVenzke, and @LongTermHoldr and names them only as "etc." Those unnamed twins map to section 3 as well. Section 3 tells them what the live pages show today. It does not add a per-chat usage breakdown.</p>
+    </section>
+
+    <section id="getting-in">
+      <h2>1. Getting in</h2>
+      <p class="handles">For @AubinFernex, @labmosaic, @greyfedora0, @adamlachman21, @BluntRiser, @aiSignalDrift, @frknnsh, @EnsignLynch, @YossiOfficial, @manny_senpai, @lenraleigh, @sophiamyang, @johnpdifranco, and forum thread 168783.</p>
+
+      <h3>Sign in with the Cursor account</h3>
+      <blockquote>
+        <p>Grok Bot uses your Cursor account. There is no separate Grok Bot login.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/sign-in">Sign in to Grok Bot</a></footer>
+      </blockquote>
+      <p>Desktop, from <a href="https://cursor.com/help/grok-bot/sign-in#how-do-i-sign-in-to-grok-bot-on-desktop">How do I sign in to Grok Bot on desktop?</a>:</p>
+      <ol>
+        <li>Open the Grok Bot app.</li>
+        <li>Choose the sign-in button the app shows.</li>
+        <li>Finish signing in in your browser with your Cursor account.</li>
+        <li>Return to Grok Bot. You should see your account in Settings.</li>
+      </ol>
+      <blockquote>
+        <p>If your Grok Bot access comes from a seat on a self-serve Grok Business plan, choose Sign in with Grok in the browser and use the Grok account that holds the seat.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/sign-in#how-do-i-sign-in-to-grok-bot-on-desktop">Sign in to Grok Bot</a></footer>
+      </blockquote>
+      <p>Mobile, from <a href="https://cursor.com/help/grok-bot/sign-in#how-do-i-sign-in-to-grok-bot-on-mobile">How do I sign in to Grok Bot on mobile?</a>:</p>
+      <ol>
+        <li>Open the Grok Bot mobile app.</li>
+        <li>Sign in with the same Cursor account you use on desktop.</li>
+      </ol>
+
+      <h3>Which plans include access</h3>
+      <blockquote>
+        <p>Grok Bot access is included on every paid individual Cursor plan and on Cursor Teams. You can also grant usage to your Cursor account by linking an individual SuperGrok, SuperGrok Plus, SuperGrok Heavy, or X Premium+ subscription, or by signing in with a Grok account that has an assigned seat on a self-serve Grok Business plan.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/plans#how-do-i-get-access-to-grok-bot">Plans and billing</a></footer>
+      </blockquote>
+      <p>The same page's access table says:</p>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th>Situation</th><th>What to do</th><th>Grok Bot usage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>You're on Cursor Ultra</td><td>Sign in to Grok Bot with the same account. Access is included.</td><td>Highest weekly usage</td></tr>
+            <tr><td>You're on Cursor Pro+</td><td>Sign in to Grok Bot with the same account. Access is included.</td><td>Generous weekly usage, below Ultra</td></tr>
+            <tr><td>You're on Cursor Pro</td><td>Sign in to Grok Bot with the same account. Access is included.</td><td>Weekly usage, below Pro+</td></tr>
+            <tr><td>You're on a Cursor Teams plan (self-serve)</td><td>Sign in with your Cursor account. Every member has access. No Premium seat or admin request required.</td><td>Follows the Teams plan allowance</td></tr>
+            <tr><td>You're on Cursor Enterprise</td><td>Consult your account executive to enable Grok Bot access for your team.</td><td>Managed by your admin</td></tr>
+            <tr><td>You have individual SuperGrok Heavy</td><td>Link your Grok account from the Grok Bot plan screen. See Link SuperGrok for Grok Bot.</td><td>Highest linked usage</td></tr>
+            <tr><td>You have individual SuperGrok Plus</td><td>Link your Grok account from the Grok Bot plan screen. See Link SuperGrok for Grok Bot.</td><td>Generous linked usage, below Heavy</td></tr>
+            <tr><td>You have individual SuperGrok</td><td>Link your Grok account from the Grok Bot plan screen. See Link SuperGrok for Grok Bot.</td><td>Linked usage, below Plus</td></tr>
+            <tr><td>You have X Premium+</td><td>Link your X account from the Grok Bot plan screen. See Link SuperGrok for Grok Bot.</td><td>Linked usage, below SuperGrok Plus</td></tr>
+            <tr><td>You have an assigned seat on a self-serve Grok Business plan</td><td>Sign out of Grok Bot, then sign back in with Sign in with Grok using the Grok account that holds the seat. You don't need to buy anything or link from the plan screen. See How do I use a Grok Business seat with Grok Bot?.</td><td>Matches the license on your seat: SuperGrok or SuperGrok Heavy</td></tr>
+            <tr><td>You're on Grok Enterprise</td><td>Contact your account manager about Grok Bot access.</td><td>Managed by your account manager</td></tr>
+            <tr><td>You're on SuperGrok Lite</td><td>Grok Bot is not included. Upgrade to SuperGrok, SuperGrok Plus, or SuperGrok Heavy, then link again.</td><td>Not included</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <blockquote>
+        <p>No. Grok Bot comes with Cursor Pro, Pro+, Ultra, and self-serve Teams. You can also link an individual SuperGrok, SuperGrok Plus, SuperGrok Heavy, or X Premium+ account. On Enterprise, ask your account team.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/faqs">Grok Bot FAQs</a>, "Do I need a separate Grok Bot subscription?"</footer>
+      </blockquote>
+      <blockquote>
+        <p>Individual SuperGrok, individual SuperGrok Plus, individual SuperGrok Heavy, and X Premium+ grant Grok Bot usage when you link them.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/supergrok#which-supergrok-tiers-grant-grok-bot">Link SuperGrok for Grok Bot</a></footer>
+      </blockquote>
+      <p>That SuperGrok page also says SuperGrok Lite does not qualify, and for Grok Enterprise: "Contact your account manager about Grok Bot access."</p>
+
+      <h3>Already linked to another Cursor account</h3>
+      <p>There is no self-serve unlink on the live pages. The FAQ and the SuperGrok page do not agree about support.</p>
+      <blockquote>
+        <p>No. A link is permanent, and you cannot move it yourself. Contact support with the account that got the link and the account that should have it.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/faqs#i-linked-supergrok-to-the-wrong-cursor-account-can-i-unlink-it">Grok Bot FAQs</a>. On that page, the words "Contact support" link to <a href="https://cursor.com/help">cursor.com/help</a>.</footer>
+      </blockquote>
+      <blockquote>
+        <p>No. A SuperGrok or X Premium+ link is permanent once created. You can't unlink a Grok or X account from a Cursor account, and you can't move a link to a different Cursor account. Support can't unlink or move it either.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/supergrok#can-i-unlink-or-move-a-supergrok-link-to-a-different-cursor-account">Link SuperGrok for Grok Bot</a></footer>
+      </blockquote>
+      <p>The same SuperGrok page repeats the harder line in its failure table, under "Access applied to the wrong Cursor account":</p>
+      <blockquote>
+        <p>A SuperGrok or X Premium+ link is permanent. Neither you nor support can unlink it or move it to a different Cursor account. Sign into Grok Bot with the Cursor account that holds the link.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/supergrok#what-if-my-supergrok-access-email-or-usage-looks-wrong-after-linking">Link SuperGrok for Grok Bot</a></footer>
+      </blockquote>
+      <p>And it also says, for the error itself:</p>
+      <blockquote>
+        <p>If you see an error that the Grok account is already linked to another Cursor account, or you still don't have access after signing in with the right Grok account, contact support. Include your Cursor account email and the Grok account email.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/supergrok#how-do-i-use-a-grok-business-seat-with-grok-bot">Link SuperGrok for Grok Bot</a>. "Contact support" there links to <a href="https://cursor.com/help/grok-bot/get-help">Get help</a>.</footer>
+      </blockquote>
+      <blockquote>
+        <p>An error says the Grok account is already linked to another Cursor account</p>
+        <p>Contact support with your Cursor account email and the Grok account email.</p>
+        <footer>The two cells of that row on <a href="https://cursor.com/help/grok-bot/supergrok#what-if-my-supergrok-access-email-or-usage-looks-wrong-after-linking">Link SuperGrok for Grok Bot</a>.</footer>
+      </blockquote>
+      <div class="callout support">
+        <strong class="label">Support is the only path, and it may not move the link</strong>
+        <p>Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. Name the account that got the link and the account that should have it. The get-help page says: "Email hi@cursor.com."</p>
+        <p>Do not expect an unlink button. The SuperGrok page says support can't unlink or move the link either. The FAQ still says to contact support with both accounts. Send the email. This guide does not claim support will move the link.</p>
+        <p><a href="https://cursor.com/help/grok-bot/get-help#how-do-i-contact-grok-bot-support">Get help</a> also asks for the email on your Grok Bot account, Grok Bot version and platform, what you were trying to do, a screenshot, the troubleshooting you already tried, and the request ID if the menu offers Copy request ID.</p>
+      </div>
+
+      <h3>Sign-in still fails after update, cache clear, and a private window</h3>
+      <p>From <a href="https://cursor.com/help/grok-bot/sign-in#why-is-grok-bot-showing-a-persistent-authentication-error-even-after-i-log-out-clear-cache-and-reinstall">Why is Grok Bot showing a persistent authentication error even after I log out, clear cache, and reinstall?</a>:</p>
+      <blockquote>
+        <p>Start with these steps, which resolve most persistent authentication errors:</p>
+      </blockquote>
+      <ol>
+        <li>Update the desktop app to the latest version, then sign out and sign back in.</li>
+        <li>Clear browser cache and cookies for cursor.com and x.ai, then sign in again in a private or incognito window.</li>
+        <li>On desktop, also try signing in at x.ai/bot using the same Cursor account.</li>
+        <li>If the error started recently, wait 30 to 60 minutes and retry. Some auth errors clear on their own as your session refreshes.</li>
+      </ol>
+      <blockquote>
+        <p>Reinstalling the app usually does not fix this, so try the steps above first.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/sign-in#why-is-grok-bot-showing-a-persistent-authentication-error-even-after-i-log-out-clear-cache-and-reinstall">Sign in to Grok Bot</a></footer>
+      </blockquote>
+      <blockquote>
+        <p>Some session and account-link failures, including looped sign-in flows, can't be fixed from your side and need our team to resolve.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/sign-in#what-if-grok-bot-authentication-or-account-link-errors-dont-resolve-with-standard-troubleshooting">Sign in to Grok Bot</a></footer>
+      </blockquote>
+      <div class="callout support">
+        <strong class="label">Then email support</strong>
+        <p>If those steps do not clear it, email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. The sign-in page says to include the email on your Cursor account, the exact error text, your platform and Grok Bot version, the steps you already tried, and whether the issue started during SuperGrok or X Premium+ linking.</p>
+      </div>
+    </section>
+
+    <section id="computer">
+      <h2>2. Computer stuck on "still starting up"</h2>
+      <p class="handles">For @_kvnloo and forum thread 172519.</p>
+      <p>The live recovery page does not use the words "still starting up." It also does not give a time after which a computer with no Recover control is failed. Use the steps it does publish.</p>
+      <blockquote>
+        <p>The Grok Bot computer is shared by your bots. Files, logins, installed apps, and the browser live there.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/computer-recovery">Grok Bot computer</a></footer>
+      </blockquote>
+      <blockquote>
+        <p>Open computer controls from Settings &gt; Updates. You can also get Recover from the reconnect screen when the app offers it.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/computer-recovery">Grok Bot computer</a></footer>
+      </blockquote>
+
+      <h3>Try these, in the page's order</h3>
+      <p>From <a href="https://cursor.com/help/grok-bot/computer-recovery#which-should-i-try-first">Which should I try first?</a>:</p>
+      <ol>
+        <li>Wait, then choose Retry if the computer says Reconnecting or Couldn't Reach Grok Bot's Computer. Bots, files, and logins are safe while it reconnects. Do not Reset during this.</li>
+        <li>Fully quit Grok Bot and reopen it. On Mac, choose Quit from the menu bar, not just close the window.</li>
+        <li>Update the computer from Settings &gt; Updates if an update is offered.</li>
+        <li>Recover if it still cannot reconnect, or if an update looks stuck and Recover computer is shown. On a slow update, Keep waiting is the safe default.</li>
+        <li>Reset only after those steps. Like Recover, it can lose very recent changes if the computer can't be reached to save them.</li>
+      </ol>
+      <blockquote>
+        <p>Do not start a second Update or Reset while one is already running. Repeated resets can interrupt a restore that is still finishing.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/computer-recovery#which-should-i-try-first">Grok Bot computer</a></footer>
+      </blockquote>
+      <p>The member controls on that page are Update, Recover, and Reset. It does not list a Restart button, and it does not tell you to reinstall the desktop app.</p>
+
+      <h3>How long the page says to wait</h3>
+      <p>From <a href="https://cursor.com/help/grok-bot/computer-recovery#how-long-should-i-wait">How long should I wait?</a>:</p>
+      <ul>
+        <li>Reconnecting and Recover usually take a few minutes. You can choose Continue in Background.</li>
+        <li>An Update can also take a few minutes when it is downloading a large image or transferring data. If it says Update still running, keep waiting.</li>
+        <li>Choose Recover only if the update appears stuck and the app offers Recover computer. If recovery is not available, keep waiting.</li>
+        <li>If Recover or Reset fails, use Retry Recovery or Retry Reset once. Then stop and contact support.</li>
+      </ul>
+      <p>"A few minutes" is the only duration that page states, and it applies to Reconnecting, Recover, and an Update that is downloading or transferring. "If recovery is not available, keep waiting" has no end time. This guide does not add one.</p>
+
+      <h3>Recreate and Terminate are an Enterprise admin control</h3>
+      <blockquote>
+        <p>Each member of your team gets one hosted computer where every Bot they run does its work.</p>
+        <footer><a href="https://cursor.com/docs/grok-bot/computers">Manage Grok Bot computers</a></footer>
+      </blockquote>
+      <blockquote>
+        <p>Grok Bot Computers is Enterprise only, and it appears only for organization admins. Team admin rights aren't enough, because one computer spans every team the member belongs to. Members never see this control.</p>
+        <footer><a href="https://cursor.com/docs/grok-bot/computers">Manage Grok Bot computers</a></footer>
+      </blockquote>
+      <p>On that admin screen, Terminate's "when to use it" cell says: "End a member's current work, or clear a computer that is stuck." Recreate and Terminate are dashboard actions for organization admins. They are not a Restart or Recreate button on every plan. If you are not an Enterprise organization admin, you will not see them. Use the member steps above.</p>
+
+      <div class="callout support">
+        <strong class="label">When recovery is not available, email support</strong>
+        <p>If you have no Recover or Reset control, the recovery page says to keep waiting. It does not publish a cutoff. If Recover or Reset fails, use the retry once, then stop.</p>
+        <p>Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. The recovery page says to include your Cursor account email, Grok Bot version, which action you already tried, the agent name, and a screenshot of the computer status. The get-help page is the one that states the address: "Email hi@cursor.com."</p>
+        <p>The live pages do not mention a computer ID field in Settings, and they do not use the status words "computer unavailable." Send the screenshot of the computer status instead of inventing an ID.</p>
+      </div>
+    </section>
+
+    <section id="usage">
+      <h2>3. Usage limits and routines that skip</h2>
+      <p class="handles">For @lokgupt_a, @sunilmehta_si, @B_doong2daddy, @finallybye, @NKerzman (forum thread 173936), @thelmerfud, @DrewVenzke, @LongTermHoldr, and the other closed usage-breakdown twins the ledger calls "etc."</p>
+      <p>This section is what the live pages let you do today. It is not a per-chat or per-routine usage breakdown.</p>
+
+      <h3>The bot says you hit a usage limit</h3>
+      <blockquote>
+        <p>No. Your weekly usage is used up. It resets each week. To keep going now, turn on on-demand usage or move to a bigger Cursor plan.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/faqs#my-bot-stopped-replying-and-says-i-hit-my-usage-limit-is-it-broken">Grok Bot FAQs</a>, "My Bot stopped replying and says I hit my usage limit. Is it broken?"</footer>
+      </blockquote>
+      <blockquote>
+        <p>They are two separate meters for two products. Grok Bot usage lives on your Cursor account. See it in Grok Bot under Settings &gt; Usage &amp; Billing, not in the Grok app.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/faqs#why-doesnt-my-supergrok-limit-match-my-grok-bot-usage">Grok Bot FAQs</a>, "Why doesn't my SuperGrok limit match my Grok Bot usage?"</footer>
+      </blockquote>
+      <blockquote>
+        <p>Paid Grok Bot access includes Weekly usage. That included grant resets weekly. When it runs out, extra Grok Bot usage can continue as On-demand usage if on-demand is enabled. That extra usage is billed through Cursor and counts toward the On-demand monthly limit.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/plans#how-does-grok-bot-usage-work">Plans and billing</a></footer>
+      </blockquote>
+      <blockquote>
+        <p>If on-demand is off, Grok Bot stops when weekly usage runs out. The screen says you have reached your Grok Bot usage limit, and it resets with weekly usage.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/plans#how-does-the-on-demand-monthly-limit-apply-to-grok-bot">Plans and billing</a></footer>
+      </blockquote>
+      <p>To turn on-demand on, that page says:</p>
+      <ol>
+        <li>In Grok Bot, open Settings and find On-demand monthly limit. Choose Enable if it is off.</li>
+        <li>If Grok Bot asks for a card, finish that on the web. In a browser, go to cursor.com/dashboard, open Spending, and set Monthly Limit.</li>
+        <li>If you subscribed in the iOS or Android app, set that limit on the web.</li>
+      </ol>
+      <blockquote>
+        <p>Weekly usage in Grok Bot is included usage. It resets weekly. A SuperGrok, SuperGrok Plus, or SuperGrok Heavy title on that meter is the linked grant, not a second Cursor plan.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/plans#what-do-the-plan-and-spending-screens-call-usage">Plans and billing</a></footer>
+      </blockquote>
+      <p>The pages say to look at Weekly usage under Settings &gt; Usage &amp; Billing. They do not say that screen shows a percentage.</p>
+
+      <h3>Routines that spend usage, and routines that skip</h3>
+      <blockquote>
+        <p>If Weekly usage is falling faster than you expect, pause routines you don't need. Then ask the Bot to widen schedules and narrow Slack triggers before you raise a plan or an on-demand limit. A routine that never runs doesn't spend usage. Test does, because it performs the work.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/routines#what-should-i-change-if-usage-drops-quickly">Routines</a>, "What should I change if usage drops quickly?"</footer>
+      </blockquote>
+      <blockquote>
+        <p>See Plans and billing for weekly usage and the on-demand monthly limit.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/routines#what-should-i-change-if-usage-drops-quickly">Routines</a></footer>
+      </blockquote>
+      <blockquote>
+        <p>Each row shows the routine's name and when it runs, or Paused.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/routines#where-do-i-see-a-bots-routines">Routines</a></footer>
+      </blockquote>
+      <blockquote>
+        <p>On the phone, open the Bot's profile and find Routines. Tap a routine to see Active, Schedule, Next run, Instruction, and Run history.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/routines#where-do-i-see-a-bots-routines">Routines</a></footer>
+      </blockquote>
+      <blockquote>
+        <p>To try it right away, use Test.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/routines">Routines</a>, "How do schedules and time zones work?"</footer>
+      </blockquote>
+      <blockquote>
+        <p>A test does real work. It can change files and use connected plugins.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/routines#how-do-i-test-a-routine">Routines</a></footer>
+      </blockquote>
+
+      <div class="callout gap">
+        <strong class="label">What the live pages do not document</strong>
+        <p>No page fetched on 2026-10-08 describes an automatic catch-up of a routine that did not run because weekly usage ran out. <a href="https://cursor.com/help/grok-bot/routines#why-hasnt-my-routine-run">Why hasn't my routine run?</a> says "Check these first" and then only these lines:</p>
+        <ul>
+          <li>The routine isn't Paused. On the phone, Active is on.</li>
+          <li>When to run shows the schedule or trigger you expect, in the right time zone.</li>
+          <li>A new schedule waits for its next time. Use Test to run it now.</li>
+          <li>For Slack, the message is new, in the channel the trigger watches, and matches its phrase.</li>
+          <li>For a webhook, the call returned 200 and used the current key.</li>
+        </ul>
+        <p>That list does not mention a usage limit, and it does not say missed runs replay after the weekly reset.</p>
+        <p>No page describes a per-routine usage meter. The routine row shows name, schedule or Paused, and the fields above. It does not show how much usage that routine spent.</p>
+        <p>Until the product pages say otherwise, the documented next steps are:</p>
+        <ol>
+          <li>Open Grok Bot Settings &gt; Usage &amp; Billing and read Weekly usage. It resets each week.</li>
+          <li>Pause routines you don't need. Ask the Bot to widen schedules and narrow Slack triggers.</li>
+          <li>Turn on on-demand usage, move to a bigger Cursor plan, or wait for the weekly reset.</li>
+          <li>After usage is available again, run the missed work yourself with Test, or ask the Bot in chat. Test spends usage. Nothing on these pages replays the skipped run for you.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="handover">
+      <h2>Handover reply</h2>
+      <div class="draft">
+        <strong class="label">Draft. Do not send until the owner says so.</strong>
+        <pre>Stuck on Grok Bot? We wrote a fix guide from Cursor's live help: https://agentmindcloud.github.io/fix/ — covers sign-in / already-linked, a computer stuck on "still starting up", and usage limits / routines that skip. When the only path is support, it says so and points at hi@cursor.com.</pre>
+        <p>When you reply to one asker, change the first sentence to their symptom: sign-in, computer, or usage.</p>
+      </div>
+    </section>
+
+    <footer class="page">
+      <p>Last checked 2026-10-08. Official pages quoted here, all HTTP 200 that day: <a href="https://cursor.com/help/grok-bot/sign-in">sign-in</a>, <a href="https://cursor.com/help/grok-bot/plans">plans</a>, <a href="https://cursor.com/help/grok-bot/faqs">FAQs</a>, <a href="https://cursor.com/help/grok-bot/supergrok">SuperGrok</a>, <a href="https://cursor.com/help/grok-bot/get-help">get help</a>, <a href="https://cursor.com/help/grok-bot/computer-recovery">computer recovery</a>, <a href="https://cursor.com/help/grok-bot/routines">routines</a>, <a href="https://cursor.com/docs/grok-bot/computers">computers</a>.</p>
+      <p>Support address, as the get-help page states it: <a href="mailto:hi@cursor.com">hi@cursor.com</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>

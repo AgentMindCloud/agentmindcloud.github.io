@@ -7,11 +7,22 @@
   <style>
     body { font-family: system-ui, sans-serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
     li { margin: 0.4rem 0; }
+
+    .fix-callout { margin: 1.2rem 0 1.4rem; padding: 1rem 1.1rem; border: 1px solid #d8d0c2; border-left: 5px solid #8c3226; background: #fffdf8; }
+    .fix-callout a { color: #8c3226; font-weight: 700; text-decoration: none; }
+    .fix-callout a:hover { text-decoration: underline; }
+    .fix-callout .url { display: block; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.9rem; color: #1c1915; margin-top: 0.35rem; }
+    p.cta { margin: 1.4rem 0 0; }
   </style>
 </head>
 <body>
   <h1>AgentMindCloud demos</h1>
   <p>Each demo answers a real user ask and carries an honest verdict on the live product.</p>
+  <div class="fix-callout">
+    <a href="/fix/">Grok Bot stuck? — fix guide</a>
+    Sign-in and "already linked," a computer stuck on "still starting up," and usage limits that make routines skip.
+    <span class="url">/fix/</span>
+  </div>
   <ul>
     <li><a href="/starter-setup-help-bot-demo/">starter-setup-help-bot-demo</a> — Grok Bot starter setup and help-bot template</li>
     <li><a href="/grok-bot-access-path-demo/">grok-bot-access-path-demo</a> — Grok Bot access path — FAIL (draft)</li>
@@ -28,5 +39,6 @@
     <li><a href="/per-chat-usage-demo/">per-chat-usage-demo</a> — Weekly usage by chat</li>
     <li><a href="/fleet-schedule-pause-demo/">fleet-schedule-pause-demo</a> — Fleet schedule desk — simulated, verdict FAIL</li>
   </ul>
+  <p class="cta"><a href="https://x.com/jana_solos">Follow @jana_solos for Grok Bot fixes</a></p>
 </body>
 </html>
