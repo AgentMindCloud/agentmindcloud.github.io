@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grok Bot voice-chat action-button setup</title>
+  <meta name="description" content="A one-press Grok Bot voice call from the iPhone Action Button is not documented. The closest setup is Action Button to open the app, open the Bot, then Start voice chat.">
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --ink: #1c1915;
+      --muted: #5e584e;
+      --line: #d8d0c2;
+      --accent: #8c3226;
+      --paper: #fffdf8;
+      --support: #f7efe3;
+      --gap: #e7efe4;
+      --draft: #f3e4c4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+      font-size: 1.0625rem;
+      line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .wrap { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1.15rem 4rem; }
+    header.site {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .kicker {
+      font-family: system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.4rem;
+    }
+    h1 { font-size: 2.15rem; line-height: 1.15; margin: 0 0 0.6rem; font-weight: 700; }
+    h2 { font-size: 1.55rem; line-height: 1.2; margin: 2.2rem 0 0.6rem; }
+    h3 { font-size: 1.15rem; margin: 1.5rem 0 0.4rem; }
+    p { margin: 0.7rem 0; }
+    .lede { font-size: 1.12rem; }
+    nav.toc ol { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+    nav.toc li { margin: 0.25rem 0; }
+    .checked {
+      font-family: system-ui, sans-serif;
+      font-size: 0.92rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 0.7rem 0.85rem;
+      margin: 1rem 0;
+    }
+    p.cta { margin: 1rem 0 0.2rem; }
+    ol.steps { padding-left: 1.25rem; }
+    ol.steps > li { margin: 0.85rem 0; }
+    blockquote {
+      margin: 0.8rem 0;
+      padding: 0.75rem 0.9rem;
+      background: var(--paper);
+      border-left: 4px solid var(--accent);
+    }
+    blockquote p { margin: 0.35rem 0; }
+    blockquote footer {
+      margin-top: 0.55rem;
+      font-family: system-ui, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .callout {
+      border: 1px solid var(--line);
+      padding: 0.85rem 0.95rem;
+      margin: 1rem 0;
+    }
+    .callout.support { background: var(--support); }
+    .callout.gap { background: var(--gap); }
+    .callout strong.label,
+    .draft strong.label {
+      font-family: system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .draft {
+      background: var(--draft);
+      border: 1px solid #c4a36a;
+      padding: 0.9rem 1rem;
+      margin: 1rem 0;
+    }
+    .draft pre {
+      white-space: pre-wrap;
+      font-family: Georgia, Palatino, serif;
+      font-size: 1rem;
+      margin: 0.4rem 0 0;
+    }
+    footer.page {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: system-ui, sans-serif;
+      font-size: 0.88rem;
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 1.75rem; }
+      .wrap { padding: 1rem 0.9rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <p class="kicker">AgentMindCloud · public fix guide</p>
+      <h1>Grok Bot voice chat from the Action Button</h1>
+      <p class="lede">Cursor's help doesn't document a way to start a Grok Bot voice call directly from the iPhone Action Button. A one-press voice call isn't documented. The closest working setup is: set the Action Button to open the Grok Bot app, open the Bot, then choose Start voice chat (the waveform button).</p>
+      <p class="checked"><strong>Last checked 2026-10-09, 09:53 Asia/Ho_Chi_Minh.</strong> Quoted sentences below were copied from the live pages that morning. Each quote links to that page. Where an earlier summary said “press,” the live Apple guide says “press and hold.” This page follows the live guide.</p>
+      <p class="cta"><a href="https://x.com/jana_solos">Follow @jana_solos for Grok Bot fixes</a></p>
+      <nav class="toc" aria-label="On this page">
+        <ol>
+          <li><a href="#path">The closest path</a></li>
+          <li><a href="#assign">1. Set the Action Button to open Grok Bot</a></li>
+          <li><a href="#start">2. Open the Bot, then Start voice chat</a></li>
+          <li><a href="#update">3. If Start voice chat is missing</a></li>
+          <li><a href="#device">Not yet checked on a device</a></li>
+          <li><a href="#desktop">Desktop: Cmd+D is voice typing</a></li>
+          <li><a href="#limits">Limits</a></li>
+          <li><a href="#mobile">What the mobile page says</a></li>
+          <li><a href="#handover">Handover reply (draft)</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <section id="path">
+      <h2>The closest path</h2>
+      <p>A one-press voice call isn't documented. Cursor's voice-chat help does not mention the Action Button, and Apple's Action Button guide does not mention Grok Bot. Nothing on these pages is a URL scheme or a deep link into a call.</p>
+      <p>After the button is assigned, the path is three moves:</p>
+      <ol class="steps">
+        <li>Press and hold the Action Button set to open the Grok Bot app. That opens the app. It does not start the call.</li>
+        <li>Open the Bot. In Cursor's words: open the chat with the Bot.</li>
+        <li>Leave the message box empty and tap Start voice chat, the waveform button. Allow the microphone if the phone asks.</li>
+      </ol>
+      <p>The sections below quote the live steps for each move.</p>
+    </section>
+
+    <section id="assign">
+      <h2>1. Set the Action Button to open Grok Bot</h2>
+      <p>Apple's guide is for supported iPhones, where the Action button replaces the Ring/Silent switch. Assign the action named Shortcut, which is the one Apple describes as opening an app. Then select the option that opens the Grok Bot app. Apple's page does not list Grok Bot by name, and it does not say this starts a voice chat.</p>
+      <blockquote>
+        <p>On supported models, iPhone has an Action button in place of the Ring/Silent switch. You can choose which function you want the Action button to perform when you press it.</p>
+        <p>To perform the action assigned to the Action button, press and hold the Action button.</p>
+        <footer><a href="https://support.apple.com/guide/iphone/use-and-customize-the-action-button-iphe89d61d66/ios">Use and customize the Action button on iPhone</a></footer>
+      </blockquote>
+      <p>To assign it:</p>
+      <blockquote>
+        <p>Go to the Settings app on your iPhone.</p>
+        <p>Tap Action Button.</p>
+        <p>To choose an action (like Silent Mode), swipe to the action you want to use—its name appears below the dots.</p>
+        <p>If there are additional options for the selected action, the Menu button appears below the action; tap it to see the list of options.</p>
+        <p>For the Controls, Shortcut, and Accessibility actions, you need to tap the button below the action and select a specific option—otherwise the Action button does nothing.</p>
+        <p>Shortcut: Open an app or run your favorite shortcut.</p>
+        <footer><a href="https://support.apple.com/guide/iphone/use-and-customize-the-action-button-iphe89d61d66/ios">Use and customize the Action button on iPhone</a>. On the live page, “the Menu button” is the alt text of the icon inside that sentence.</footer>
+      </blockquote>
+      <p>Swipe until the name below the dots is Shortcut. Tap the button below that action and select the option that opens the Grok Bot app. Apple says that without a specific option, the Action button does nothing.</p>
+      <p>Shortcut, in this guide, is the name of an Action Button action. It can open an app, or it can run a shortcut you already have. This page does not add a step inside the Shortcuts app. See the device note below.</p>
+    </section>
+
+    <section id="start">
+      <h2>2. Open the Bot, then Start voice chat</h2>
+      <p>Press and hold the Action Button. Grok Bot opens. The call has not started. Open the Bot, then use the waveform button.</p>
+      <blockquote>
+        <p>Open the chat with the Bot.</p>
+        <p>Leave the message box empty.</p>
+        <p>Choose Start voice chat. It is the waveform button in the message box.</p>
+        <p>Allow microphone access if your computer or phone asks.</p>
+        <p>The call shows Connecting… on desktop or Calling… on the phone, then the Bot starts talking.</p>
+        <p>Start voice chat shows only when the message box is empty.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/voice-chat">Voice chat with a Bot</a>, “How do I start a voice chat?”</footer>
+      </blockquote>
+      <p>On the phone, that waveform control is a tap. The help page's verb is “Choose.” The phone shows Calling… when the call is actually starting.</p>
+    </section>
+
+    <section id="update">
+      <h2>3. If Start voice chat is missing</h2>
+      <p>An empty message box is the first check. If the box is empty and the waveform button is still absent, update Grok Bot. The voice-chat page links “How do I update Grok Bot?” for that.</p>
+      <blockquote>
+        <p>Start voice chat shows only when the message box is empty. If the box is empty and you still don't see it, update Grok Bot. See How do I update Grok Bot?</p>
+        <footer><a href="https://cursor.com/help/grok-bot/voice-chat">Voice chat with a Bot</a></footer>
+      </blockquote>
+      <blockquote>
+        <p>The desktop app checks for updates on its own. When one is ready, the account menu shows New update available. Choose Install, then Restart to update. Your Bots keep working in the cloud while the app restarts.</p>
+        <p>To check yourself, open Settings, go to Updates, and choose Check for Updates. If an update is ready, choose Restart to Update. Automatic Updates installs updates while you're away.</p>
+        <p>Phone updates come from the App Store or Google Play. Product changes are listed on the <a href="https://cursor.com/changelog">changelog</a>.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/how-to#how-do-i-update-grok-bot">Grok Bot How Tos</a>, “How do I update Grok Bot?”</footer>
+      </blockquote>
+      <p>On an iPhone, the update comes from the App Store.</p>
+    </section>
+
+    <section id="device">
+      <h2>Not yet checked on a device</h2>
+      <div class="callout gap">
+        <p>Not yet checked on a device: we have not confirmed whether Grok Bot exposes Shortcuts actions</p>
+      </div>
+      <p>There is no Shortcuts step on this page. Apple's Shortcut action, quoted above, is only the Action Button setting that can open an app.</p>
+    </section>
+
+    <section id="desktop">
+      <h2>Desktop: Cmd+D is voice typing</h2>
+      <p>Voice chat on desktop uses the same waveform button, Start voice chat. Cmd+D and Ctrl+D do something else. They start voice typing, not a voice call.</p>
+      <blockquote>
+        <p>Voice typing turns your speech into text in the message box. You read it, edit it, and send it like any other message. The Bot replies in text.</p>
+        <p>On desktop, choose Start voice input in the message box. You can also press Cmd+D on Mac or Ctrl+D on Windows and Linux, or hold the keys while you talk.</p>
+        <p>On the phone, tap Start dictation.</p>
+        <p>A voice chat is a live conversation. The Bot answers out loud and keeps listening until you hang up.</p>
+        <p>On the phone, stop dictation before you start a voice chat.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/voice-chat">Voice chat with a Bot</a>, “How is a voice chat different from voice typing?”</footer>
+      </blockquote>
+      <p>The live page shows Cmd+D in the Mac slot of that first key mark, and Ctrl+D for Windows and Linux. Pressing those keys chooses Start voice input. It does not choose Start voice chat.</p>
+    </section>
+
+    <section id="limits">
+      <h2>Limits</h2>
+      <blockquote>
+        <p>Only one voice chat runs at a time. If you start another one, Grok Bot asks End the current voice chat? Choose End and Chat to switch.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/voice-chat">Voice chat with a Bot</a>, “What can I do during a voice chat?”</footer>
+      </blockquote>
+      <blockquote>
+        <p>No. Voice chat works with one Bot at a time. Open that Bot's own chat to start a call.</p>
+        <p>Voice chat isn't available with a teammate's Team Bot.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/voice-chat">Voice chat with a Bot</a>, “Can I voice chat in a group chat?”</footer>
+      </blockquote>
+    </section>
+
+    <section id="mobile">
+      <h2>What the mobile page says</h2>
+      <p>The Grok Bot mobile help page tells you to install the app and sign in. Its article text does not mention the Action Button, the Shortcuts app, a widget, or starting a voice chat. Voice chat stays on the voice-chat page quoted above.</p>
+      <blockquote>
+        <p>Use Grok Bot on your phone with the same account and cloud computer as desktop. Grok Bot is available on iOS and Android.</p>
+        <p>Install the current Grok Bot mobile app from the App Store on iOS or Google Play on Android.</p>
+        <p>Sign in on mobile with the same Cursor account you use on desktop or web.</p>
+        <footer><a href="https://cursor.com/help/grok-bot/mobile">Grok Bot on mobile</a></footer>
+      </blockquote>
+    </section>
+
+    <section id="handover">
+      <h2>Handover reply</h2>
+      <p>Source ask: <a href="https://x.com/kelleymuro/status/2108256866912637041">https://x.com/kelleymuro/status/2108256866912637041</a></p>
+      <div class="draft">
+        <strong class="label">Draft. Do not send until the owner says so.</strong>
+        <pre>There's no documented one-press voice call yet, but this gets you there in two taps: set the Action Button to open Grok Bot, open your Bot, then tap Start voice chat (the waveform button). Steps with Apple's and Cursor's docs: https://agentmindcloud.github.io/fix/voice-button/</pre>
+      </div>
+    </section>
+
+    <footer class="page">
+      <p>Last checked 2026-10-09, 09:53 Asia/Ho_Chi_Minh. Official pages quoted here, all HTTP 200 that morning: <a href="https://cursor.com/help/grok-bot/voice-chat">voice chat</a> (09:50), <a href="https://cursor.com/help/grok-bot/mobile">Grok Bot on mobile</a> (09:50), <a href="https://support.apple.com/guide/iphone/use-and-customize-the-action-button-iphe89d61d66/ios">Action button</a> (09:50), <a href="https://cursor.com/help/grok-bot/how-to#how-do-i-update-grok-bot">How do I update Grok Bot?</a> (09:51), <a href="https://cursor.com/changelog">changelog</a> (09:53).</p>
+      <p>Source ask: <a href="https://x.com/kelleymuro/status/2108256866912637041">@kelleymuro, 2026-10-08 18:03 UTC</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>
