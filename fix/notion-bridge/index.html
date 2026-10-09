@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grok Bot and Claude shared Notion board</title>
+  <meta name="description" content="A private Notion handoff board, a weekday Grok Bot routine, and a Claude instruction. No direct link between a Grok Bot and a Claude chat is described in the docs cited here.">
+  <link rel="canonical" href="https://agentmindcloud.github.io/fix/notion-bridge/">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #d9d1c3;
+      --paper: #f6f1e8;
+      --card: #fffdf8;
+      --pine: #1f4d3a;
+      --pine-soft: #e7f0ea;
+      --link: #0d4f8b;
+      --warn: #6b3a12;
+      --warn-bg: #f8efe4;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 18px/1.55 Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    }
+    a { color: var(--link); }
+    a:hover { text-decoration-thickness: 2px; }
+    header, main, footer { width: min(44rem, calc(100% - 2rem)); margin: 0 auto; }
+    header { padding: 2.5rem 0 1rem; }
+    .kicker {
+      margin: 0 0 0.6rem;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pine);
+    }
+    h1 { margin: 0 0 0.6rem; font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.15; font-weight: 700; }
+    .lede { margin: 0; font-size: 1.15rem; }
+    h2 {
+      margin: 2.4rem 0 0.6rem;
+      font-size: 1.45rem;
+      line-height: 1.25;
+    }
+    h3 { margin: 1.4rem 0 0.4rem; font-size: 1.1rem; }
+    p, li { margin: 0.55rem 0; }
+    ol, ul { padding-left: 1.2rem; }
+    main { padding-bottom: 2rem; }
+    blockquote {
+      margin: 0.8rem 0;
+      padding: 0.7rem 0.9rem;
+      background: var(--card);
+      border-left: 4px solid var(--pine);
+    }
+    blockquote p { margin: 0.35rem 0; }
+    cite { display: block; margin-top: 0.45rem; font-style: normal; font-size: 0.92rem; }
+    .note, .limit {
+      margin: 1rem 0;
+      padding: 0.85rem 1rem;
+      background: var(--warn-bg);
+      border: 1px solid #ead8c4;
+    }
+    .note strong, .limit strong { color: var(--warn); }
+    .ok {
+      margin: 1rem 0;
+      padding: 0.85rem 1rem;
+      background: var(--pine-soft);
+      border: 1px solid #c9ddd1;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.55rem 0.65rem;
+      border: 1px solid var(--line);
+    }
+    th { background: #efe8dc; }
+    .scroll { overflow-x: auto; margin: 0.8rem 0 0.4rem; }
+    pre {
+      margin: 0.6rem 0 0.2rem;
+      padding: 0.9rem 1rem;
+      overflow-x: auto;
+      background: #231f1a;
+      color: #f6f1e8;
+      font: 0.86rem/1.45 ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      white-space: pre-wrap;
+    }
+    .caption {
+      margin: 0.2rem 0 0.8rem;
+      color: var(--muted);
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 0.88rem;
+    }
+    .cta {
+      display: inline-block;
+      margin: 0.4rem 0 0.2rem;
+      padding: 0.7rem 1rem;
+      background: var(--pine);
+      color: #f6f1e8;
+      text-decoration: none;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+    }
+    .cta:hover { background: #163828; }
+    footer {
+      margin-top: 1rem;
+      padding: 1.2rem 0 3rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    footer h2 { color: var(--ink); }
+    .src { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">Handoff guide</p>
+    <h1>Grok Bot and Claude, on one private Notion board</h1>
+    <p class="lede">The docs checked on 9 October 2026 describe no direct link between a Grok Bot and a Claude chat session. A shared Notion database is the path those docs support: each product documents its own Notion connection, and the board is the place they both can be aimed at.</p>
+  </header>
+  <main>
+    <h2>What the docs actually say</h2>
+    <p>Cursor’s Grok Bot help lists plugins and routines. The plugin page names Notion. The routines page tells you to ask a Bot, in chat, for a schedule such as every weekday at a stated time. Neither page mentions Claude. Claude’s connector directory lists a Notion connector made by Notion. That connector page does not mention Grok Bot. Nothing on those pages describes a pipe from a Grok Bot into a Claude chat session, or the other way around.</p>
+
+    <blockquote>
+      <p>Connect Gmail, Notion, Slack, and other services so agents can use them in chat.</p>
+      <p>Plugins let agents talk to external services. Plugin connections belong to the same account you used to sign in to Grok Bot.</p>
+      <p>A plugin uses the account you authorize. It can do only what that account can already do in that service. It cannot raise your access, and it cannot change sharing.</p>
+      <p>Some other plugins, like Notion, can connect a second account.</p>
+      <cite><a href="https://cursor.com/help/grok-bot/connect-plugins">Connect plugins</a>, Cursor Grok Bot help. Fetched 9 October 2026, 12:58 ICT, HTTP 200.</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>A routine tells one Bot when to run a workflow. It can run on a schedule, or when something happens, such as a Slack message, a GitHub, Linear, Sentry, or PagerDuty event, an email, or a webhook call. Routines run in the cloud while your laptop is closed.</p>
+      <p>Ask the Bot in chat. Say what it should do and when. For example: “Every weekday at 9:00 AM, summarize new support tickets in this chat.” The Bot creates the routine, and it appears in the Bot’s routines.</p>
+      <p>Schedules use the time zone in Settings, under Bot, labeled Timezone.</p>
+      <p>Ask for a schedule in plain words, like “every weekday at 8:00 AM” or “every 2 hours”. Then open the routine and check When to run.</p>
+      <cite><a href="https://cursor.com/help/grok-bot/routines">Routines</a>, Cursor Grok Bot help. Fetched 9 October 2026, 12:58 ICT, HTTP 200.</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>Connect your Notion workspace to search, update, and power workflows across tools.</p>
+      <p>Notion MCP helps you plug tools into your Notion workspace, allowing you to create, edit, search and organize content directly from Claude.</p>
+      <p>Only use connectors from developers you trust. Anthropic does not control which tools developers make available and cannot verify that they will work as intended or that they won’t change.</p>
+      <p>Under Tools, that page lists: search, fetch, create-pages, update-page, move-pages, duplicate-page, create-database, update-database, create-comment, get-comments, get-users, get-self, get-user. Those names stay in this quotation. They are not used in the routine or the Claude instruction below.</p>
+      <cite><a href="https://claude.com/marketplace/connectors/notion">Notion connector</a>, Claude marketplace. The address <span>https://claude.com/connectors/notion</span> redirects here. Fetched 9 October 2026, 12:58 ICT, HTTP 200. The page says Made by Notion, Sign-in Required, and prints a Connector URL. This guide does not ask you to type that URL.</cite>
+    </blockquote>
+
+    <blockquote>
+      <p>A connector links Claude to an outside app or service, such as your calendar, your documents, or your issue tracker, so Claude can find information there and take actions for you.</p>
+      <p>If you already know which connector you want, open Customize &gt; Connectors and follow Add a connector from the directory.</p>
+      <p>Enter a service name in Search connectors, or look through the categories, then select a connector to open its page.</p>
+      <p>Send a message that needs the service, such as “What’s on my calendar tomorrow afternoon?” for a calendar connector or “Summarize the open issues assigned to me” for an issue tracker.</p>
+      <cite><a href="https://claude.com/docs/connectors/getting-started">Get started with connectors</a>, Claude.ai Documentation. Fetched 9 October 2026, 12:58 ICT, HTTP 200.</cite>
+    </blockquote>
+
+    <div class="limit">
+      <p><strong>Limit, stated plainly.</strong> The Connect plugins page spells out actions for Google Calendar, Google Sheets, Slack, and Gmail. It names Notion as a plugin and states the general limit quoted above. It does not add a Notion-specific list of database actions. The Claude marketplace page says the Notion connector can create, edit, search, and organize content, and it prints a Tools list. Anthropic’s own sentence on that page says Anthropic does not control those tools and cannot verify that they will work or that they will not change. The prompts below are written as intent. They contain no tool names and no arguments.</p>
+    </div>
+
+    <h2>Handoff board</h2>
+    <p>Build this as a private database in your own Notion workspace. Five properties. Status is a Select, with the options Todo, Claimed, and Done. Owner is a separate Select, with the options Grok Bot and Claude.</p>
+    <div class="scroll">
+      <table>
+        <caption class="caption">Copy-paste property table. Types and options are the ones to create.</caption>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Options or behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Title</td>
+            <td>Title</td>
+            <td>The first column. It holds the name of the database page.</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>Select</td>
+            <td>Todo, Claimed, Done</td>
+          </tr>
+          <tr>
+            <td>Owner</td>
+            <td>Select</td>
+            <td>Grok Bot, Claude</td>
+          </tr>
+          <tr>
+            <td>Notes</td>
+            <td>Text</td>
+            <td>The result of the work, written by whichever owner ran the row.</td>
+          </tr>
+          <tr>
+            <td>Updated</td>
+            <td>Last edited time</td>
+            <td>Notion fills this when the row changes. You do not type it.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption">Same table as plain text, for pasting into a note while you build the database:</p>
+    <pre>Handoff board
+
+Property | Type | Options or behavior
+Title | Title | First column. Name of the database page.
+Status | Select | Todo, Claimed, Done
+Owner | Select | Grok Bot, Claude
+Notes | Text | Result of the work.
+Updated | Last edited time | Filled by Notion when the row changes. Not typed by hand.</pre>
+
+    <h3>Why Status is a Select</h3>
+    <p>Notion also has a Status property. Its help says the three main categories stay fixed, and custom tags sit underneath them. Todo, Claimed, and Done are not those three categories, so this template uses Select, which is the type Notion describes as one option from a list of tags you add yourself.</p>
+    <blockquote>
+      <p>Select. Choose one option from a list of tags. Useful for categorization.</p>
+      <p>Status. Track this item’s progress using status tags categorized by To-do, In Progress, or Complete.</p>
+      <p>Text. Add text that can be formatted. Great for summaries, notes, and descriptions!</p>
+      <p>Last edited time. Records the timestamp of an item's last edit. Auto-updated and not editable.</p>
+      <cite><a href="https://www.notion.com/help/database-properties">Database properties</a>, Notion Help. Fetched 9 October 2026, 12:58 ICT, HTTP 200.</cite>
+    </blockquote>
+    <blockquote>
+      <p>To add your own custom status tags, select Add status underneath To-do, In Progress or Completed, and type in your new sub-category. You can’t change the three main categories.</p>
+      <cite><a href="https://www.notion.com/help/guides/status-property-gives-clarity-on-tasks">The status property gives you clarity on task progress</a>, Notion Help. Fetched 9 October 2026, 12:58 ICT, HTTP 200.</cite>
+    </blockquote>
+
+    <h2>Set up the database</h2>
+    <p>Do this in a private page. Do not publish it, and do not turn on access for anyone on the web.</p>
+    <ol>
+      <li>Create a new page and, under Get started with, select •••, then Table. On a page you already have open, the slash command <span>/database</span> is the other way Notion documents. <a href="https://www.notion.com/help/create-a-database">Create a database</a> says: “The first column is where you enter the name of your database pages. Each column in a Notion table corresponds to a property that gives your item context.”</li>
+      <li>Name the database Handoff board. Rename the first column to Title. <a href="https://www.notion.com/help/database-properties">Database properties</a> says you can click into a property and edit the property’s name.</li>
+      <li>Add a property named Status. Choose Select. Add the options Todo, Claimed, and Done. Create a database says to click the property name, choose Edit property, and select Add an option. Database properties says that for a Select “you’ll be prompted to add tags by typing what you want and pressing enter after each.”</li>
+      <li>Add a property named Owner. Choose Select. Add the options Grok Bot and Claude, the same way.</li>
+      <li>Add a property named Notes. Choose Text.</li>
+      <li>Add a property named Updated. Choose Last edited time. Database properties says values automatically appear for Last edited time.</li>
+      <li>Leave a new row at Status Todo, and set Owner to Grok Bot or Claude depending on who should do that row. Put the task in Title. Leave Notes empty until that side runs.</li>
+    </ol>
+    <div class="note">
+      <p><strong>Keep the board private.</strong> <a href="https://www.notion.com/help/sharing-and-permissions">Sharing and permissions</a> says: “Select Share at the top of any page to: Invite someone to the page.” It also says: “Open the Publish tab to share a page to the web.” And: “Anyone on the web with link: This means that anyone who has the link to your page can access it, even if they aren’t part of your workspace or aren’t a Notion user.” <a href="https://www.notion.com/help/public-pages-and-web-publishing">Publish a website with Notion Sites</a> says: “To ensure your page’s contents aren’t shared publicly, turn this setting off by clicking Share at the top of your Notion page, opening the dropdown next to Anyone on the web with link, and clicking Remove.” Do not publish this database. Do not set Anyone on the web with link.</p>
+      <p>Invite only the Notion account you will connect to Grok Bot, and the Notion account you will connect to Claude. Sharing and permissions says people with Can edit content “can create and edit pages within the database, and edit property values,” and that they “will not be able to change the structure of the database and its properties.” Add the five properties yourself before you rely on an account that only has Can edit content. Connect plugins says a plugin cannot change sharing, so the Notion account you authorize has to already be allowed to edit the rows.</p>
+    </div>
+
+    <h2>Grok Bot routine</h2>
+    <p>Connect Notion on the same Cursor account that owns the Bot, then ask that Bot for the routine in chat. The schedule below is weekdays at 9:00 AM, which is the shape of the example on the routines page (“Every weekday at 9:00 AM, summarize new support tickets in this chat.”). After the Bot saves it, open the routine and read When to run. Schedules use the time zone in Settings, under Bot, labeled Timezone.</p>
+    <ol>
+      <li>In Grok Bot, select Plugins on the sidebar, or follow an in-chat Connect card. Browse or search for Notion, then add it. When Grok Bot asks you to Authorize or Authenticate, finish the provider login in your browser. Confirm the plugin appears under Installed. Those steps are the numbered list under “How do I add a plugin?” on <a href="https://cursor.com/help/grok-bot/connect-plugins">Connect plugins</a>.</li>
+      <li>Added means the plugin is installed, not that you are signed in. If it shows Needs auth or Disconnected, open it and choose Authorize. That sentence is on the same page.</li>
+      <li>Ask the Bot in chat. Paste the instruction below, including the weekday time. <a href="https://cursor.com/help/grok-bot/routines">Routines</a> says: “Say what it should do and when.” The Bot creates the routine.</li>
+      <li>Open the routine. Instruction is what the Bot does on each run. When to run lists the schedule. If the words do not match weekdays at 9:00 AM in the time zone you expect, choose Edit and tell the Bot what to fix. A new schedule waits for its next time.</li>
+    </ol>
+    <p class="caption">Paste this as the routine. It is intent only.</p>
+    <pre>Every weekday at 9:00 AM, use the Notion account already connected to this Bot and open the private database named Handoff board. Work only on rows whose Owner is Grok Bot and whose Status is Todo or Claimed. On each such row, set Status to Claimed, do the work named in Title, write the result in Notes, and set Status to Done. If no such row exists, leave the database unchanged and say so in this chat. Leave every row whose Owner is Claude as you found it. Do not change sharing, and do not publish the database.</pre>
+    <div class="ok">
+      <p>Not yet checked end to end on Grok Bot.</p>
+    </div>
+    <p>Routines says: “A test does real work. It can change files and use connected plugins. Use a safe input.” This build did not press Test, and it did not write to any Notion workspace. If you test, point the Bot at a scratch copy of this database that is still private.</p>
+
+    <h2>Claude instruction</h2>
+    <p>Claude’s getting-started page describes connectors inside a conversation. It does not describe a weekday schedule for a connector. Use the instruction when you want Claude’s rows handled. The Owner filter is what keeps Claude off the Grok Bot rows.</p>
+    <ol>
+      <li>Open Customize, then Connectors. Select Discover, enter Notion in Search connectors, and open the Notion connector. Select Connect to Claude and finish sign-in. Getting started says: “When sign-in finishes and you’re back on the Connectors page, the connector is listed under Your connectors with the status Connected.” Those controls are on <a href="https://claude.com/docs/connectors/getting-started">Get started with connectors</a>. The listing itself is the <a href="https://claude.com/marketplace/connectors/notion">Notion connector</a> page, which says it is made by Notion and that sign-in is required.</li>
+      <li>In a chat, select + in the message box and select Connectors. Turn the Notion connector on for that conversation. Getting started says the toggle controls whether Claude can use the connector in this conversation.</li>
+      <li>Send the instruction below. Getting started says to send a message that needs the service, and that Claude can ask for approval before it uses one of the connector’s tools. Select Allow once, or Always allow, only for an action you intend on this private database.</li>
+    </ol>
+    <p class="caption">Paste this into the Claude chat. It is intent only.</p>
+    <pre>Use the connected Notion account and open the private database named Handoff board. Work only on rows whose Owner is Claude and whose Status is Todo or Claimed. On each such row, set Status to Claimed, do the work named in Title, write the result in Notes, and set Status to Done. If no such row exists, leave the database unchanged and say so in this chat. Leave every row whose Owner is Grok Bot as you found it. Do not change sharing, and do not publish the database.</pre>
+    <div class="ok">
+      <p>Not yet checked end to end on Claude.</p>
+    </div>
+
+    <h2>One place for Grok Bot fixes</h2>
+    <p><a class="cta" href="https://x.com/jana_solos">Follow @jana_solos for Grok Bot fixes</a></p>
+  </main>
+  <footer>
+    <h2>Source and handover draft</h2>
+    <p class="src">Source ask: <a href="https://x.com/austin_semple/status/2108267651084480633">https://x.com/austin_semple/status/2108267651084480633</a></p>
+    <p>Handover reply draft, not posted:</p>
+    <blockquote>
+      <p>No direct pipe between a Grok Bot and a Claude chat that I know of, but the Notion board idea works. Here's a ready board plus prompts for both sides: <a href="https://agentmindcloud.github.io/fix/notion-bridge/">https://agentmindcloud.github.io/fix/notion-bridge/</a></p>
+    </blockquote>
+    <p class="src">Docs quoted above were fetched on 9 October 2026 around 12:58 Asia/Ho_Chi_Minh (ICT) and returned HTTP 200 at the addresses linked. The guide address in the draft is where this page is meant to be published. This file does not itself prove that address is already live.</p>
+  </footer>
+</body>
+</html>
