@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is Grok Bot down?</title>
+  <meta name="description" content="Snapshot from 9 October 2026, 08:09:53 Asia/Ho_Chi_Minh. Cursor Status lists the Grok Bot component as Operational. This is not Cursor's official status page.">
+  <link rel="canonical" href="https://agentmindcloud.github.io/status/">
+  <style>
+    :root {
+      --ink: #1c1916;
+      --muted: #5c564e;
+      --line: #ddd6cb;
+      --paper: #f7f4ee;
+      --card: #fffdf9;
+      --green: #0f5c38;
+      --green-bg: #e7f5ec;
+      --link: #0c3f73;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      font-size: 1.0625rem;
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--link);
+      text-underline-offset: 0.16em;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(40rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 650;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .answer {
+      margin: 1.25rem 0 0.35rem;
+      font-size: clamp(3rem, 10vw, 4.5rem);
+      font-weight: 650;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .state,
+    .when {
+      margin: 0.4rem 0 0;
+    }
+
+    .when {
+      color: var(--muted);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .banner {
+      margin: 1.5rem 0 0;
+      padding: 0.9rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--green);
+    }
+
+    .banner p { margin: 0; }
+
+    .banner p + p { margin-top: 0.45rem; }
+
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .quote {
+      margin: 0;
+      padding: 1rem 1.1rem;
+      background: var(--green-bg);
+      border: 1px solid #c9e6d4;
+    }
+
+    .quote p { margin: 0; }
+
+    .word {
+      display: inline-block;
+      margin: 0.15rem 0 0.35rem;
+      color: var(--green);
+      font-size: 1.75rem;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+    }
+
+    .meta {
+      margin: 0.85rem 0 0;
+      padding: 0;
+      list-style: none;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .meta li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .meta li:last-child { border-bottom: 0; }
+
+    .k {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    caption {
+      padding: 0.75rem 0.85rem;
+      text-align: left;
+      font-weight: 650;
+      caption-side: top;
+    }
+
+    th, td {
+      padding: 0.7rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+      border-top: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    code, .code {
+      font-family: "Segoe UI", ui-monospace, monospace;
+      font-size: 0.88em;
+    }
+
+    td a { word-break: break-all; }
+
+    .note {
+      margin: 0.85rem 0 0;
+    }
+
+    .handover {
+      margin: 0;
+      padding: 1rem 1.1rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 1rem;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.75rem 1rem;
+      background: var(--ink);
+      color: #fffdf9;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .cta:hover { background: #000; }
+
+    .cta:focus-visible { outline-color: var(--ink); }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    footer p { margin: 0.35rem 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">AgentMindCloud public snapshot</p>
+    <h1>Is Grok Bot down?</h1>
+    <p class="answer">No.</p>
+    <p class="state">The Grok Bot component on <a href="https://status.cursor.com/">Cursor Status</a> reads <strong>Operational</strong>.</p>
+    <p class="when">Checked <time datetime="2026-10-09T08:09:53+07:00">9 October 2026, 08:09:53 Asia/Ho_Chi_Minh</time> (ICT, UTC+7).</p>
+
+    <div class="banner">
+      <p>This is not Cursor’s official status page, and it is not a status API. Cursor publishes the live page at <a href="https://status.cursor.com/">https://status.cursor.com/</a>.</p>
+      <p>This file is a snapshot. The word above will not change by itself. To recheck, open <a href="https://status.cursor.com/">status.cursor.com</a> and read the Grok Bot row there.</p>
+    </div>
+
+    <h2>Official Grok Bot component</h2>
+    <blockquote class="quote">
+      <p>Quoted from the Grok Bot row on <a href="https://status.cursor.com/">https://status.cursor.com/</a>, fetched 9 October 2026 at 08:09:53 Asia/Ho_Chi_Minh.</p>
+      <p class="word">Operational</p>
+      <p>The row’s visible text is “Operational”. Its markup says <span class="code">data-component-status="operational"</span> and <span class="code">data-component-id="sm5wkcnqkvr9"</span>. Cursor’s public summary at <a href="https://status.cursor.com/api/v2/summary.json">https://status.cursor.com/api/v2/summary.json</a> has <span class="code">"name": "Grok Bot"</span> and <span class="code">"status": "operational"</span>. The page banner on that same fetch was “All Systems Operational”.</p>
+    </blockquote>
+    <ul class="meta">
+      <li><span class="k">Plain state</span> Operational. Not Degraded, Outage, or Maintenance.</li>
+      <li><span class="k">Component updated_at</span> 2026-10-08T20:51:06.836Z (9 October 2026, 03:51:06 ICT)</li>
+      <li><span class="k">Status page updated_at</span> 2026-10-09T00:11:35.742Z (9 October 2026, 07:11:35 ICT)</li>
+      <li><span class="k">Open incidents</span> None. <a href="https://status.cursor.com/api/v2/incidents/unresolved.json">incidents/unresolved.json</a> returned <span class="code">"incidents": []</span>.</li>
+      <li><span class="k">Scheduled maintenance</span> None. The scheduled-maintenances list was empty.</li>
+      <li>
+        <span class="k">Latest resolved incident that lists Grok Bot</span>
+        <a href="https://status.cursor.com/incidents/25l5bm6rdrb6">Elevated errors affecting Opus 5.5</a> — resolved, minor impact. Components listed: Automations, CLI, Cloud Agents, IDE, Grok Bot. Created 2026-10-08T19:52:44.876Z (9 October 2026, 02:52:44 ICT). Resolved 2026-10-08T20:51:06.871Z (9 October 2026, 03:51:06 ICT). Latest update: “This incident has been resolved.”
+      </li>
+    </ul>
+
+    <h2>Public URL probe</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>Fetched 9 October 2026, 08:09:53 Asia/Ho_Chi_Minh. A second pass in the same second returned the same codes. No redirects; each final URL matched the URL below.</caption>
+        <thead>
+          <tr>
+            <th scope="col">URL</th>
+            <th scope="col">HTTP</th>
+            <th scope="col">Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://status.cursor.com/">https://status.cursor.com/</a></td>
+            <td>200</td>
+            <td>Cursor Status HTML loaded. The Grok Bot row on that page reads Operational.</td>
+          </tr>
+          <tr>
+            <td><a href="https://cursor.com/help/grok-bot/faqs">https://cursor.com/help/grok-bot/faqs</a></td>
+            <td>200</td>
+            <td>Cursor Docs page loaded. Title: “Grok Bot FAQs | Cursor Docs”.</td>
+          </tr>
+          <tr>
+            <td><a href="https://docs.x.ai/grok-bot/overview">https://docs.x.ai/grok-bot/overview</a></td>
+            <td>200</td>
+            <td>Docs page loaded. Title: “Grok Bot | SpaceXAI Docs”.</td>
+          </tr>
+          <tr>
+            <td><a href="https://agentmindcloud.github.io/fix/">https://agentmindcloud.github.io/fix/</a></td>
+            <td>200</td>
+            <td>AgentMindCloud fix guide loaded. Title: “Grok Bot stuck? A fix guide from Cursor's live help”.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">This page is a snapshot. Rechecking means opening <a href="https://status.cursor.com/">https://status.cursor.com/</a>. These HTTP codes stay as they were at 08:09:53 ICT until someone replaces this file.</p>
+
+    <h2>Platform vs personal</h2>
+    <p>Cursor Status says Grok Bot is Operational. If your own bot still fails, that is not a platform outage. Do not read this page as an outage report.</p>
+    <p>Use <a href="https://agentmindcloud.github.io/fix/">https://agentmindcloud.github.io/fix/</a> for sign-in, a computer that is still starting, and usage or routines.</p>
+
+    <h2>What this page cannot see</h2>
+    <p>This page cannot see one account, one computer, or one bot runner. It only reports the public Grok Bot component on Cursor Status, plus whether four public URLs responded when this snapshot was taken.</p>
+
+    <h2>Reply you can send</h2>
+    <blockquote class="handover">
+      <p>Quick check: https://agentmindcloud.github.io/status/ — pulls Cursor's official Grok Bot status and a few public URLs. If the platform is up and your bot still fails, use https://agentmindcloud.github.io/fix/ for sign-in, stuck computer, and usage/routines.</p>
+    </blockquote>
+
+    <h2>Follow</h2>
+    <p><a class="cta" href="https://x.com/jana_solos">Follow @jana_solos for Grok Bot fixes</a></p>
+
+    <footer>
+      <p>Snapshot for <a href="https://agentmindcloud.github.io/status/">https://agentmindcloud.github.io/status/</a>. Asked because @MajorBaguette posted “Grok @bot down ?” on 8 October 2026.</p>
+      <p>Cursor operates status.cursor.com. This page does not.</p>
+    </footer>
+  </main>
+</body>
+</html>
