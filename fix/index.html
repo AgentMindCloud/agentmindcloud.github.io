@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grok Bot stuck? A fix guide from Cursor's live help</title>
-  <meta name="description" content="What to do today for Grok Bot sign-in, a computer stuck on still starting up, and usage limits that make routines skip. Quoted from Cursor's help pages on 2026-10-08.">
+  <title>Grok Bot stuck? Unofficial community fix guide</title>
+  <meta name="description" content="Unofficial community guide, not affiliated with Cursor or xAI. What to do today for Grok Bot sign-in, a computer stuck on still starting up, and usage limits that make routines skip. Quoted from Cursor's help pages on 2026-10-08.">
   <style>
     :root {
       --bg: #f3efe6;
@@ -104,8 +104,7 @@
     }
     th { font-family: system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
     .scroll { overflow-x: auto; }
-    .handles { font-family: system-ui, sans-serif; font-size: 0.92rem; }
-    .draft {
+        .draft {
       background: var(--draft);
       border: 1px solid #c4a36a;
       padding: 0.9rem 1rem;
@@ -133,67 +132,27 @@
   </style>
 </head>
 <body>
+<p class="unofficial-note" style="margin:0;padding:0.5rem 1rem;background:#fff4d6;color:#1c1915;border-bottom:1px solid #d8c48a;font:600 0.95rem/1.4 system-ui,sans-serif;text-align:center;">Unofficial community guide. Not affiliated with Cursor or xAI.</p>
   <div class="wrap">
     <header class="site">
-      <p class="kicker">AgentMindCloud · public fix guide</p>
-      <h1>Grok Bot stuck?</h1>
-      <p class="lede">Three problems you can work through today from Cursor's own help: getting in, a computer that stays on "still starting up," and weekly usage that makes routines skip.</p>
+      <p class="kicker">AgentMindCloud · unofficial community fix guide</p>
+      <h1>Grok Bot stuck? An unofficial community fix guide</h1>
+      <p class="lede">Three problems you can work through today, using quotes from Cursor's public help pages: getting in, a computer that stays on "still starting up," and weekly usage that makes routines skip.</p>
       <p class="checked"><strong>Last checked 2026-10-08.</strong> Every quoted sentence below was copied from the live page that day. Each quote links to that page. This guide does not add a button, a timer, or a meter the live pages do not describe.</p>
       <p class="cta"><a href="https://x.com/jana_solos">Follow @jana_solos for Grok Bot fixes</a></p>
       <p>More fixes: <a href="/fix/voice-button/">Open a Grok Bot voice chat from the iPhone Action Button</a> · <a href="/fix/notion-bridge/">Connect a Grok Bot and Claude through a shared Notion board</a> · <a href="/fix/scheduled-scripts/">Run scheduled scripts as Grok Bot routines, not cron</a> · <a href="/fix/email/">Grok Bot email: what the docs say today</a></p>
       <nav class="toc" aria-label="On this page">
         <ol>
-          <li><a href="#who">Who this helps</a></li>
           <li><a href="#getting-in">1. Getting in</a></li>
           <li><a href="#computer">2. Computer stuck on "still starting up"</a></li>
           <li><a href="#usage">3. Usage limits and routines that skip</a></li>
-          <li><a href="#handover">Handover reply (draft)</a></li>
         </ol>
       </nav>
     </header>
 
-    <section id="who">
-      <h2>Who this helps</h2>
-      <p>Each person or thread below maps to one section. Open that section and follow only the linked Cursor pages.</p>
-      <div class="scroll">
-        <table class="handles">
-          <thead>
-            <tr><th>Asker</th><th>Section</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><a href="https://x.com/AubinFernex/status/2107203371828478447">@AubinFernex</a></td><td>1. Getting in</td></tr>
-            <tr><td><a href="https://x.com/labmosaic/status/2107299322702495745">@labmosaic</a></td><td>1. Getting in</td></tr>
-            <tr><td>@greyfedora0</td><td>1. Getting in</td></tr>
-            <tr><td>@adamlachman21</td><td>1. Getting in</td></tr>
-            <tr><td>@BluntRiser</td><td>1. Getting in</td></tr>
-            <tr><td>@aiSignalDrift</td><td>1. Getting in</td></tr>
-            <tr><td>@frknnsh</td><td>1. Getting in</td></tr>
-            <tr><td>@EnsignLynch</td><td>1. Getting in</td></tr>
-            <tr><td>@YossiOfficial</td><td>1. Getting in</td></tr>
-            <tr><td><a href="https://x.com/manny_senpai/status/2107514241221824745">@manny_senpai</a></td><td>1. Getting in</td></tr>
-            <tr><td><a href="https://x.com/lenraleigh/status/2107726651123446218">@lenraleigh</a></td><td>1. Getting in</td></tr>
-            <tr><td>@sophiamyang</td><td>1. Getting in</td></tr>
-            <tr><td>@johnpdifranco</td><td>1. Getting in</td></tr>
-            <tr><td><a href="https://forum.cursor.com/t/deleted-cursor-account-leaves-grok-link-orphaned-and-blocks-relinking/168783">Forum thread 168783</a> (deleted Cursor account, orphaned Grok link)</td><td>1. Getting in</td></tr>
-            <tr><td><a href="https://x.com/_kvnloo/status/2106994183038759335">@_kvnloo</a></td><td>2. Computer</td></tr>
-            <tr><td><a href="https://forum.cursor.com/t/grok-bot-agent-computer-stuck-starting-up-48-72h-update-reset-failed-on-all-devices-please-reprovision/172519">Forum thread 172519</a> (computer stuck starting up)</td><td>2. Computer</td></tr>
-            <tr><td><a href="https://x.com/lokgupt_a/status/2107799423069851863">@lokgupt_a</a></td><td>3. Usage and routines</td></tr>
-            <tr><td><a href="https://x.com/sunilmehta_si/status/2108066091968962970">@sunilmehta_si</a> (held)</td><td>3. Usage and routines</td></tr>
-            <tr><td><a href="https://x.com/B_doong2daddy/status/2108074624672051460">@B_doong2daddy</a></td><td>3. Usage and routines</td></tr>
-            <tr><td>@finallybye</td><td>3. Usage and routines</td></tr>
-            <tr><td>@NKerzman, forum thread 173936</td><td>3. Usage and routines</td></tr>
-            <tr><td>@thelmerfud</td><td>3. Usage and routines</td></tr>
-            <tr><td>@DrewVenzke</td><td>3. Usage and routines</td></tr>
-            <tr><td>@LongTermHoldr</td><td>3. Usage and routines</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>The ledger also groups other closed usage-breakdown twins with @thelmerfud, @DrewVenzke, and @LongTermHoldr and names them only as "etc." Those unnamed twins map to section 3 as well. Section 3 tells them what the live pages show today. It does not add a per-chat usage breakdown.</p>
-    </section>
 
     <section id="getting-in">
       <h2>1. Getting in</h2>
-      <p class="handles">For @AubinFernex, @labmosaic, @greyfedora0, @adamlachman21, @BluntRiser, @aiSignalDrift, @frknnsh, @EnsignLynch, @YossiOfficial, @manny_senpai, @lenraleigh, @sophiamyang, @johnpdifranco, and forum thread 168783.</p>
 
       <h3>Sign in with the Cursor account</h3>
       <blockquote>
@@ -313,7 +272,6 @@
 
     <section id="computer">
       <h2>2. Computer stuck on "still starting up"</h2>
-      <p class="handles">For @_kvnloo and forum thread 172519.</p>
       <p>The live recovery page does not use the words "still starting up." It also does not give a time after which a computer with no Recover control is failed. Use the steps it does publish.</p>
       <blockquote>
         <p>The Grok Bot computer is shared by your bots. Files, logins, installed apps, and the browser live there.</p>
@@ -370,7 +328,6 @@
 
     <section id="usage">
       <h2>3. Usage limits and routines that skip</h2>
-      <p class="handles">For @lokgupt_a, @sunilmehta_si, @B_doong2daddy, @finallybye, @NKerzman (forum thread 173936), @thelmerfud, @DrewVenzke, @LongTermHoldr, and the other closed usage-breakdown twins the ledger calls "etc."</p>
       <p>This section is what the live pages let you do today. It is not a per-chat or per-routine usage breakdown.</p>
 
       <h3>The bot says you hit a usage limit</h3>
@@ -450,14 +407,6 @@
       </div>
     </section>
 
-    <section id="handover">
-      <h2>Handover reply</h2>
-      <div class="draft">
-        <strong class="label">Draft. Do not send until the owner says so.</strong>
-        <pre>Stuck on Grok Bot? We wrote a fix guide from Cursor's live help: https://agentmindcloud.github.io/fix/ — covers sign-in / already-linked, a computer stuck on "still starting up", and usage limits / routines that skip. When the only path is support, it says so and points at hi@cursor.com.</pre>
-        <p>When you reply to one asker, change the first sentence to their symptom: sign-in, computer, or usage.</p>
-      </div>
-    </section>
 
     <footer class="page">
       <p>Last checked 2026-10-08. Official pages quoted here, all HTTP 200 that day: <a href="https://cursor.com/help/grok-bot/sign-in">sign-in</a>, <a href="https://cursor.com/help/grok-bot/plans">plans</a>, <a href="https://cursor.com/help/grok-bot/faqs">FAQs</a>, <a href="https://cursor.com/help/grok-bot/supergrok">SuperGrok</a>, <a href="https://cursor.com/help/grok-bot/get-help">get help</a>, <a href="https://cursor.com/help/grok-bot/computer-recovery">computer recovery</a>, <a href="https://cursor.com/help/grok-bot/routines">routines</a>, <a href="https://cursor.com/docs/grok-bot/computers">computers</a>.</p>

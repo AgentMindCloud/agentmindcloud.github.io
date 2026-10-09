@@ -13,7 +13,7 @@ Wording is from the live pages fetched that morning. Where an earlier summary di
 | 3. Says a one-press voice call isn't documented; no invented deep link or URL scheme | PASS | The page says “A one-press voice call isn't documented” in the lede and again under “The closest path.” The HTML has no `grok://`, custom scheme, or deep link. |
 | 4. On-device Shortcuts check recorded, or the unchecked statement with no Shortcuts step | PASS | The page states, exactly: “Not yet checked on a device: we have not confirmed whether Grok Bot exposes Shortcuts actions”. It gives no Shortcuts-app step. |
 | 5. A reader can follow only the page from the Action Button to a voice chat | PASS | Desk-verified, not device-verified. Walkthrough below. No iPhone was available. |
-| 6. Handover reply names the page URL and the source ask | PASS | Handover section links `https://x.com/kelleymuro/status/2108256866912637041` and the draft names `https://agentmindcloud.github.io/fix/voice-button/`. |
+| 6. (removed 2026-10-09) | — | Source-ask link and reply draft removed from the public page. |
 | 7. Exactly one CTA, “Follow @jana_solos for Grok Bot fixes”, linking `https://x.com/jana_solos` | PASS | That string and `https://x.com/jana_solos` each appear once, on the same link. `/fix/` adding a link to this page, while keeping its own single CTA, is the publisher's edit and is still outstanding with case 1. |
 
 ## HTTP evidence

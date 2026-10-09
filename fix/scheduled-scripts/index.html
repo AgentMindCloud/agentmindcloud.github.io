@@ -149,6 +149,7 @@
   </style>
 </head>
 <body>
+<p class="unofficial-note" style="margin:0;padding:0.5rem 1rem;background:#fff4d6;color:#1c1915;border-bottom:1px solid #d8c48a;font:600 0.95rem/1.4 system-ui,sans-serif;text-align:center;">Unofficial community guide. Not affiliated with Cursor or xAI.</p>
   <header>
     <p class="kicker">Grok Bot setup</p>
     <h1>Run scheduled scripts as Grok Bot routines, not cron</h1>
@@ -157,7 +158,7 @@
   </header>
   <main>
     <h2>Why the schedule belongs on a routine</h2>
-    <p>@mrright1188’s scripts were scheduled on the cloud computer. The computers page describes that computer as running or hibernated, and it says the computer went to sleep after its last use.</p>
+    <p>A user asked about scripts scheduled on the cloud computer. The computers page describes that computer as running or hibernated, and it says the computer went to sleep after its last use.</p>
     <blockquote>
       <p>Each member of your team gets one hosted computer where every Bot they run does its work.</p>
     </blockquote>
@@ -310,10 +311,6 @@ status: ok</pre>
     <p>This page is the setup. If a routine you set up this way misfires, the usage and skipped-routines notes are on <a href="https://agentmindcloud.github.io/fix/">https://agentmindcloud.github.io/fix/</a>.</p>
   </main>
   <footer>
-    <h2>Handover</h2>
-    <p>Source ask: <a href="https://x.com/mrright1188/status/2108368919048392792">https://x.com/mrright1188/status/2108368919048392792</a></p>
-    <p class="note">Draft. Do not post until the owner says so. The reply below names this page. It is the handover text, not a quote from the Cursor pages.</p>
-    <pre>The cloud computer sleeps when idle, so OS cron won't fire. Move the job into a Grok Bot routine instead: ask the Bot "every weekday at 8:00 AM, run ~/scripts/your-script.sh and send me the output", check When to run, then hit Test. Steps here: https://agentmindcloud.github.io/fix/scheduled-scripts/</pre>
     <p><a class="cta" href="https://x.com/jana_solos">Follow @jana_solos for Grok Bot fixes</a></p>
   </footer>
 </body>

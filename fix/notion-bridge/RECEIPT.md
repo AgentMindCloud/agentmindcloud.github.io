@@ -33,7 +33,6 @@ The published guide and the `/fix/` “More fixes” link are the publisher’s 
 | https://claude.com/marketplace/connectors/notion | 200 | “Connect your Notion workspace to search, update, and power workflows across tools.” “allowing you to create, edit, search and organize content directly from Claude.” “Only use connectors from developers you trust. Anthropic does not control which tools developers make available and cannot verify that they will work as intended or that they won’t change.” `https://claude.com/connectors/notion` redirects here (also 200). |
 | https://claude.com/docs/connectors/getting-started | 200 | “A connector links Claude to an outside app or service…” “open Customize > Connectors and follow Add a connector from the directory.” “Enter a service name in Search connectors…” “Send a message that needs the service…” “When sign-in finishes and you’re back on the Connectors page, the connector is listed under Your connectors with the status Connected.” |
 | https://x.com/jana_solos | 200 | CTA target required by the packet. |
-| https://x.com/austin_semple/status/2108267651084480633 | 200 | Source ask linked in the footer. |
-| https://agentmindcloud.github.io/fix/notion-bridge/ | 404 | Pending publisher. The footer uses this as the guide URL in the handover draft. |
+| https://agentmindcloud.github.io/fix/notion-bridge/ | 404 | Pending publisher at build time. |
 
 Bodies for the help pages were also fetched at 2026-10-09 12:58:21 ICT and the quoted sentences were matched against those bodies before the 13:03 recheck.

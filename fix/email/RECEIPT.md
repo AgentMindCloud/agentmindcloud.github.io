@@ -36,7 +36,7 @@ Pages quoted on the how-to, each HTTP 200 when fetched:
 | `https://cursor.com/help/grok-bot/onboarding` | 2026-10-09 15:56:04 +07 | 200 |
 | `https://cursor.com/docs/grok-bot/use-cases` | 2026-10-09 15:56:04 +07 | 200 |
 
-Cited quote URLs were requested again at 2026-10-09 15:57:15 +07 and each returned 200, including `https://x.com/jana_solos` and `https://x.com/petergyang/status/2108412799684915576`.
+Cited quote URLs were requested again at 2026-10-09 15:57:15 +07 and each returned 200, including `https://x.com/jana_solos`.
 
 `https://agentmindcloud.github.io/fix/` returned 200 at 2026-10-09 15:53:28 +07. Its “More fixes” line does not include this page. `https://agentmindcloud.github.io/fix/email/` returned 404 at that same time.
 
@@ -52,6 +52,6 @@ Cited quote URLs were requested again at 2026-10-09 15:57:15 +07 and each return
 | 6. Exactly one @jana_solos CTA, and the outage is not covered | PASS | The anchor text “Follow @jana_solos for Grok Bot fixes” and the URL `https://x.com/jana_solos` each appear once. The page text has no “174136”. |
 | 7. A desk reviewer can explain what is documented and what is not | PASS | The opening line says Cursor has not published a Grok Bot email help page. The body quotes the routine trigger, email-file attachments, the Gmail plugin, the use-case prompts, and the account-email pages, then tells the reader to ask the Bot in chat and, if mail seems broken, to use Get help. |
 
-## What a reviewer can tell @petergyang
+## What a reviewer can tell a user who asks
 
 Cursor has not published a help page at the email URLs. A routine’s published description includes an email among the events that can start it, and the published setup line is to ask the Bot in chat. A chat can take email files as attachments. A connected Gmail plugin, on the Connect plugins page, can search and read mail, draft and send, and apply labels, on one mailbox at a time. Starter prompts on the use-cases page mention connecting email and returning drafts. The account email address is a separate page, and it cannot be changed. Support, if mail seems broken, is the Get help page.
